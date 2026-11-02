@@ -6,7 +6,7 @@ def bfs(start, goal):
         state, path = queue.pop(0)
 
         if state == goal:
-            return path
+            return path 
 
         if state in visited:
             continue
@@ -14,7 +14,7 @@ def bfs(start, goal):
         visited.append(state)
 
         for i in range(len(state)):    
-            
+        
             
             
             new = list(state)
@@ -28,8 +28,9 @@ def bfs(start, goal):
                 if next_state not in visited:
                     queue.append((next_state, path + [next_state]))
 
-    return None
 
+    return None
+ 
 
 start = ('A', 'B', 'C')
 goal = ('C', 'B', 'A')
@@ -37,7 +38,7 @@ goal = ('C', 'B', 'A')
 result = bfs(start, goal)
 
 if result:
-    print("Steps to reach goal:")
+    print("Steps to reach goal:", len(result) - 1)
     for step in result:
         print(step)
 else:
